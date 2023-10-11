@@ -38,7 +38,6 @@ public class Validacao {
         boolean cpfValido = false;
         Utilitaria utilitaria = new Utilitaria();
         texto = utilitaria.limparTexto(texto);
-        System.out.println("texto digitado = "+texto);
         String digitoCpf = texto.substring(texto.length()-2, texto.length()); //pega os dois ultimos digitos
         int soma = 0, resto = 0, digito;
         String digitoConvertido = "";
@@ -46,7 +45,6 @@ public class Validacao {
         int valor = texto.length()-1;
         for (int i = 0; i < (texto.length()-2)+digitoConvertido.length(); i++) {
             int numero = Character.getNumericValue(texto.charAt(i));
-            System.out.println("numero 1 = "+numero);
             soma += (valor * numero);
             valor--;
         }
@@ -59,15 +57,12 @@ public class Validacao {
         } else {
             digitoConvertido += ""+digito;
         }
-
-        System.out.println("primeiro digito = "+digitoConvertido);
 
         soma = 0;
 
         valor = texto.length();
         for (int i = 0; i < (texto.length()-2)+digitoConvertido.length(); i++) {
             int numero = Character.getNumericValue(texto.charAt(i));
-            System.out.println("numero 1 = "+numero);
             soma += (valor * numero);
             valor--;
         }
@@ -80,8 +75,6 @@ public class Validacao {
         } else {
             digitoConvertido += ""+digito;
         }
-
-        System.out.println("2 digitos finais = "+digitoConvertido);
 
         if (digitoConvertido.equals(digitoCpf)) {
             cpfValido = true;
