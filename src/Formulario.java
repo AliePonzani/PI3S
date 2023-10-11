@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Formulario extends JFrame implements ActionListener{
+public class Formulario extends JFrame implements ActionListener {
 
     JTextField txtNome, txtTelefone, txtEndereco, txtCPF, txtRG;
     JButton btnOk, btnCancelar;
@@ -15,7 +15,6 @@ public class Formulario extends JFrame implements ActionListener{
         getContentPane().setLayout(gl);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // centralizando formulario na tela
-        
 
         // criando os campos
         txtNome = criarCampo("Nome: ");
@@ -24,7 +23,7 @@ public class Formulario extends JFrame implements ActionListener{
         txtCPF = criarCampo(" CPF: ");
         txtRG = criarCampo(" RG: ");
 
-        //criar os botões
+        // criar os botões
         btnOk = new JButton("OK");
         btnOk.addActionListener(this);
         getContentPane().add(btnOk);
@@ -33,9 +32,8 @@ public class Formulario extends JFrame implements ActionListener{
         btnCancelar.addActionListener(this);
         getContentPane().add(btnCancelar);
 
+        setVisible(true);// torna visivel a tela
 
-        setVisible(true);//torna visivel a tela
-    
     }
 
     public JTextField criarCampo(String texto) {
@@ -47,30 +45,33 @@ public class Formulario extends JFrame implements ActionListener{
         JTextField campo = new JTextField();
         getContentPane().add(campo);
 
-
         return campo;
     }
 
-    
-    //definindo função aos botões
+    // definindo função aos botões
     public void actionPerformed(ActionEvent e) {
 
-        //se o botão ok for pressionado
+        // se o botão ok for pressionado
         if (e.getSource() == btnOk) {
             Validacao validando = new Validacao();
 
-            if (!validando.validarRG(txtRG.getText())) {
-                JOptionPane.showMessageDialog(null,"RG inválido!");
-            } else if (!validando.validarCpf(txtCPF.getText())) {
-                JOptionPane.showMessageDialog(null,"CPF inválido!");
-            } 
-            else {
-                JOptionPane.showMessageDialog(null,"RG e CPF válidos!");
-                System.exit(0);
+            if (txtCPF.getText().equals("") || txtRG.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+            } else {
+                if (!validando.validarCpf(txtCPF.getText())) {
+                    JOptionPane.showMessageDialog(null, "CPF inválido!");
+                    txtCPF.grabFocus();
+                } else if (!validando.validarRG(txtRG.getText())) {
+                    JOptionPane.showMessageDialog(null, "RG inválido!");
+                    txtRG.grabFocus();
+                } else {
+                    JOptionPane.showMessageDialog(null, "RG e CPF válidos!");
+                    System.exit(0);
+                }
             }
 
-          // se o botão cancelar for pressionado  
-        } else if(e.getSource() == btnCancelar){
+            // se o botão cancelar for pressionado
+        } else if (e.getSource() == btnCancelar) {
             System.exit(0);
         }
     }
@@ -79,5 +80,4 @@ public class Formulario extends JFrame implements ActionListener{
         new Formulario();
     }
 
-    
 }

@@ -12,6 +12,7 @@ public class Validacao {
 
         for (int i = 0; i < texto.length() - 1; i++) {
             int numero = Character.getNumericValue(texto.charAt(i)) ; //pega o char(caracter retirado do texto) e converte em int
+            
             soma += ((i+2) * numero);
         }
 
@@ -37,13 +38,17 @@ public class Validacao {
         boolean cpfValido = false;
         Utilitaria utilitaria = new Utilitaria();
         texto = utilitaria.limparTexto(texto);
+        System.out.println("texto digitado = "+texto);
         String digitoCpf = texto.substring(texto.length()-2, texto.length()); //pega os dois ultimos digitos
         int soma = 0, resto = 0, digito;
         String digitoConvertido = "";
 
-        for (int i = 0; i < (texto.length()-3)+digitoConvertido.length(); i++) {
+        int valor = texto.length()-1;
+        for (int i = 0; i < (texto.length()-2)+digitoConvertido.length(); i++) {
             int numero = Character.getNumericValue(texto.charAt(i));
-            soma += ((i+2) * numero);
+            System.out.println("numero 1 = "+numero);
+            soma += (valor * numero);
+            valor--;
         }
 
         resto = soma%11;
@@ -54,12 +59,17 @@ public class Validacao {
         } else {
             digitoConvertido += ""+digito;
         }
+
+        System.out.println("primeiro digito = "+digitoConvertido);
 
         soma = 0;
 
-        for (int i = 0; i < (texto.length()-3)+digitoConvertido.length(); i++) {
+        valor = texto.length();
+        for (int i = 0; i < (texto.length()-2)+digitoConvertido.length(); i++) {
             int numero = Character.getNumericValue(texto.charAt(i));
-            soma += ((i+2) * numero);
+            System.out.println("numero 1 = "+numero);
+            soma += (valor * numero);
+            valor--;
         }
 
         resto = soma%11;
@@ -70,6 +80,8 @@ public class Validacao {
         } else {
             digitoConvertido += ""+digito;
         }
+
+        System.out.println("2 digitos finais = "+digitoConvertido);
 
         if (digitoConvertido.equals(digitoCpf)) {
             cpfValido = true;
