@@ -1,0 +1,84 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TesteIdade",
+            "request": "launch",
+            "mainClass": "Exception.TesteIdade",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "TesteIOException",
+            "request": "launch",
+            "mainClass": "Exception.TesteIOException",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "TesteException1",
+            "request": "launch",
+            "mainClass": "Exception.TesteException1",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "TesteException2",
+            "request": "launch",
+            "mainClass": "Exception.TesteException2",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "TesteException3",
+            "request": "launch",
+            "mainClass": "Exception.TesteException3",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "TesteException4",
+            "request": "launch",
+            "mainClass": "Exception.TesteException4",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "TesteException5",
+            "request": "launch",
+            "mainClass": "Exception.TesteException5",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "TesteExeption6",
+            "request": "launch",
+            "mainClass": "Exception.TesteExeption6",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "Formulário.App",
+            "projectName": "PI3S_6204f9f0"
+        },
+        {
+            "type": "java",
+            "name": "Formulario",
+            "request": "launch",
+            "mainClass": "Formulário.Formulario",
+            "projectName": "PI3S_6204f9f0"
+        }
+    ]
+}

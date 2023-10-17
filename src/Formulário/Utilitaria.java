@@ -1,3 +1,4 @@
+package Formulário;
 //Esta classe vai conter as funções de edição de texto 
 
 public class Utilitaria {
