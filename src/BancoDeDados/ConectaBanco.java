@@ -1,34 +1,29 @@
 package BancoDeDados;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ConectaBanco {
-	private final static String 
-	url = "jdbc:mysql://localhost:3306/Aline";
-	private final static String username = "root";
-	private final static String password = "";		
-	static Connection con; 
-	
-	public static void main(String[] args) 
-			throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
+	private final static String url = "jdbc:mysql://20.195.192.239:3306/ProjetoPI";
+	private final static String username = "aline-server";
+	private final static String password = "aline12345";
+	static Connection con;
+
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 		ConectaBanco cb = new ConectaBanco();
-		con = cb.getConexao();		
+		con = cb.getConexao();
 	}
-	public static Connection getConexao() throws SQLException, 
-	ClassNotFoundException, InstantiationException, 
-	IllegalAccessException{
+
+	public static Connection getConexao() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 		try {
 			con = DriverManager.getConnection(url, username, password);
 			System.out.println("Conectado");
 			return con;
 		} catch (SQLException e) {
 			throw new SQLException("Erro ao conectar com a base de dados" + e.getMessage());
-		}		}
-	public static void fechaConexao(Connection conn) 	{
+		}
+	}
+
+	public static void fechaConexao(Connection conn) {
 		try {
 			if (conn != null) {
 				conn.close();
@@ -36,8 +31,10 @@ public class ConectaBanco {
 			}
 		} catch (Exception e) {
 			System.out.println("Nao foi possivel fechar a conexao com o banco de dados " + e.getMessage());
-		}		}
-	public static void fechaConexao(Connection conn, PreparedStatement stmt)	{
+		}
+	}
+
+	public static void fechaConexao(Connection conn, PreparedStatement stmt) {
 		try {
 			if (conn != null) {
 				fechaConexao(conn);
@@ -48,8 +45,10 @@ public class ConectaBanco {
 			}
 		} catch (Exception e) {
 			System.out.println("Nao foi possavel fechar o statement " + e.getMessage());
-		}		}
-	public static void fechaConexao(Connection conn, PreparedStatement stmt, ResultSet rs){
+		}
+	}
+
+	public static void fechaConexao(Connection conn, PreparedStatement stmt, ResultSet rs) {
 		try {
 			if (conn != null || stmt != null) {
 				fechaConexao(conn, stmt);
@@ -60,10 +59,12 @@ public class ConectaBanco {
 			}
 		} catch (Exception e) {
 			System.out.println("Nao foi possivel fechar o ResultSet " + e.getMessage());
-		}	}
-	public static Connection getConexao(String username, String password) throws SQLException, 
-	ClassNotFoundException, InstantiationException, 
-	IllegalAccessException{
+		}
+	}
+
+	public static Connection getConexao(String username, String password) throws SQLException,
+			ClassNotFoundException, InstantiationException,
+			IllegalAccessException {
 		try {
 			con = DriverManager.getConnection(url, username, password);
 			System.out.println("Conectado");
@@ -71,5 +72,6 @@ public class ConectaBanco {
 		} catch (SQLException e) {
 			System.out.println("Erro ao conectar com a base de dados" + e.getMessage());
 		}
-		return null;		}
+		return null;
+	}
 }

@@ -17,9 +17,9 @@ public class ConsultandoBranco {
             while (rs.next()) {
                 String nome = rs.getString("alunosNome");
                 String telefone = rs.getString("alunosTelefone");
-                double alunosNota = rs.getDouble("alunosNota");
+                double nota = rs.getDouble("alunosNota");
 
-                System.out.println("Nome: " + nome + " Telefone: " + telefone);
+                System.out.println("Nome: " + nome + " Telefone: " + telefone + " Nota do aluno: " + nota);
             }
             ConectaBanco.fechaConexao(cn, null, rs);
         } catch (SQLException e) {

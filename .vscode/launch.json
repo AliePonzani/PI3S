@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TesteConexaoMySQL",
+            "request": "launch",
+            "mainClass": "BancoDeDados.TesteConexaoMySQL",
+            "projectName": "PI3S_b33ccd8b"
+        },
+        {
+            "type": "java",
+            "name": "ConectaBanco",
+            "request": "launch",
+            "mainClass": "BancoDeDados.ConectaBanco",
+            "projectName": "PI3S_b33ccd8b"
+        },
+        {
+            "type": "java",
+            "name": "ConsultandoBranco",
+            "request": "launch",
+            "mainClass": "BancoDeDados.ConsultandoBranco",
+            "projectName": "PI3S_b33ccd8b"
+        },
+        {
+            "type": "java",
             "name": "ConsultandoBranco",
             "request": "launch",
             "mainClass": "BancoDeDados.ConsultandoBranco",
