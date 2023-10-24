@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "InserirDadosNoBanco",
+            "request": "launch",
+            "mainClass": "BancoDeDados.InserirDadosNoBanco",
+            "projectName": "PI3S_b33ccd8b"
+        },
+        {
+            "type": "java",
             "name": "TesteConexaoMySQL",
             "request": "launch",
             "mainClass": "BancoDeDados.TesteConexaoMySQL",

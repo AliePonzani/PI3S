@@ -5,12 +5,13 @@ import java.sql.*;
 public class InserirDadosNoBanco {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
-        Aluno novAluno = new Aluno("Aline Teste", "(11)97636-3569", 8.5);
+        Aluno novAluno = new Aluno("Aline Teste", "11999999999", 8.5);
 
         try  {
+            //
             Connection cn = ConectaBanco.getConexao();
             // Defina a consulta SQL para inserir um novo aluno na tabela Alunos.
-            String sql = "INSERT INTO Alunos (alunosNome, alunosTelefone, alunosNota) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO Alunos (nome, telefone, nota) VALUES (?, ?, ?)";
 
             // Crie um objeto PreparedStatement para executar a consulta.
             PreparedStatement pstmt = cn.prepareStatement(sql);
