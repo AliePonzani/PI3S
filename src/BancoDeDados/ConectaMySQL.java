@@ -3,7 +3,7 @@ package BancoDeDados;
 import java.sql.*;
 
 public class ConectaMySQL {
-	private final static String url = "jdbc:mysql://20.195.192.239:3306/ProjetoPI";
+	private final static String url = "jdbc:mysql://20.195.192.239:3306/funcionarios";
 	private final static String username = "aline-server";
 	private final static String password = "aline12345";
 	private Connection con;
@@ -21,7 +21,7 @@ public class ConectaMySQL {
 		try {
 			con = DriverManager.getConnection(url, username, password);
 			stmt = con.createStatement();
-			// System.out.println("\nConexão estabelecida com sucesso!\n");			
+			System.out.println("\nConexão estabelecida com sucesso!\n");			
 		} catch (SQLException e) {
 			System.out.println("\nNão foi possível estabelecer conexão " + e + "\n");
 			System.exit(1);

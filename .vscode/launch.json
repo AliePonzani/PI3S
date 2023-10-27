@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ConectaMySQL",
+            "request": "launch",
+            "mainClass": "BancoDeDados.ConectaMySQL",
+            "projectName": "PI3S_9e722c41"
+        },
+        {
+            "type": "java",
             "name": "TesteSistema",
             "request": "launch",
             "mainClass": "BancoDeDados.TesteSistema",
